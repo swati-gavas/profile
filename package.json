@@ -1,8 +1,8 @@
 {
-  "homepage": "https://swati-gavas.github.io/profile",
   "name": "profile",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://swati-gavas.github.io/profile",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
