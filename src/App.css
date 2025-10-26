@@ -215,15 +215,17 @@ section p {
 
 
 /* ========== GALLERY ========== */
-.gallery-item {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  background: #111;
-  border-radius: 8px;
-  padding: 1rem;
-  margin-bottom: 2rem;
+/* FINAL, OVERRIDING RULE — PUT AT END OF FILE */
+.gallery-item img {
+  display: block;
+  width: 100% !important;   /* <-- makes image exactly as wide as its box */
+  height: auto !important;  /* no stretching */
+  aspect-ratio: 4 / 3;      /* keep portrait box shape */
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #222;
 }
+
 
 .gallery-item:nth-child(even) {
   background: #0e0e0e;
