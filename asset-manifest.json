@@ -1,17 +1,38 @@
 {
   "files": {
-    "main.css": "/profile/static/css/main.3b9a472a.css",
-    "main.js": "/profile/static/js/main.1bb28e14.js",
+    "main.css": "/profile/static/css/main.22720d80.css",
+    "main.js": "/profile/static/js/main.41bf384d.js",
     "static/js/453.32d81922.chunk.js": "/profile/static/js/453.32d81922.chunk.js",
+    "static/media/sciart.JPG": "/profile/static/media/sciart.439f2e369fe905eb48aa.JPG",
+    "static/media/p_duck.JPG": "/profile/static/media/p_duck.6fb63044a42bc2553519.JPG",
+    "static/media/c2_2009.jpg": "/profile/static/media/c2_2009.df284fe9a250b098fba6.jpg",
+    "static/media/c1_2009.jpg": "/profile/static/media/c1_2009.25a4e022fdcc2e4f4560.jpg",
+    "static/media/p_bird.JPG": "/profile/static/media/p_bird.0ecef0dc2b38bbd0cd4d.JPG",
+    "static/media/visible_matter.png": "/profile/static/media/visible_matter.6a296b0619e5c194cc36.png",
+    "static/media/p_telescope.JPG": "/profile/static/media/p_telescope.bf6afdb02e82fc70b89f.JPG",
+    "static/media/h0.png": "/profile/static/media/h0.d705e5ad9a919884f314.png",
+    "static/media/c_jvn.JPG": "/profile/static/media/c_jvn.fc41269d4b2d694e737b.JPG",
+    "static/media/home.JPG": "/profile/static/media/home.92db3189dbb939843ebf.JPG",
+    "static/media/fractal.jpg": "/profile/static/media/fractal.fa05ea0d24a13e2a28e4.jpg",
+    "static/media/web2.png": "/profile/static/media/web2.366e29e342ec23bd57f7.png",
+    "static/media/p_camouflage.jpg": "/profile/static/media/p_camouflage.c1f1e987d2434cc6a0aa.jpg",
+    "static/media/p_trailing.jpg": "/profile/static/media/p_trailing.ace313a3b057de1c41f5.jpg",
+    "static/media/cosmic_web.png": "/profile/static/media/cosmic_web.817ebceddcf00ab1b101.png",
+    "static/media/c_2024.JPG": "/profile/static/media/c_2024.571a7b52ab9d704f933c.JPG",
+    "static/media/c1_2024.PNG": "/profile/static/media/c1_2024.505d5e094cc8cbbf653c.PNG",
+    "static/media/c_2020.jpg": "/profile/static/media/c_2020.cba65c7a38ef992f93c5.jpg",
+    "static/media/c_2017.jpg": "/profile/static/media/c_2017.3815073941bd568e2e8b.jpg",
+    "static/media/p_mkw.png": "/profile/static/media/p_mkw.f002b91da73761c302d3.png",
+    "static/media/me_talking.jpg": "/profile/static/media/me_talking.90c5f250fc7754900437.jpg",
     "static/media/palr45w.ttf": "/profile/static/media/palr45w.bb4f1e6dc3fc85a32ad2.ttf",
     "static/media/logo.JPG": "/profile/static/media/logo.9b92508e7c093a340b6b.JPG",
     "index.html": "/profile/index.html",
-    "main.3b9a472a.css.map": "/profile/static/css/main.3b9a472a.css.map",
-    "main.1bb28e14.js.map": "/profile/static/js/main.1bb28e14.js.map",
+    "main.22720d80.css.map": "/profile/static/css/main.22720d80.css.map",
+    "main.41bf384d.js.map": "/profile/static/js/main.41bf384d.js.map",
     "453.32d81922.chunk.js.map": "/profile/static/js/453.32d81922.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3b9a472a.css",
-    "static/js/main.1bb28e14.js"
+    "static/css/main.22720d80.css",
+    "static/js/main.41bf384d.js"
   ]
 }
