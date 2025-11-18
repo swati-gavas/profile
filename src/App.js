@@ -42,18 +42,18 @@ export default function PersonalWebsite() {
 
     The theoretical understanding of LSS begins with small quantum fluctuations seeded during inflation, which grew under gravity as the Universe expanded and cooled. In the early linear regime, these perturbations are well described by linear perturbation theory and transfer functions, consistent with observations of the Cosmic Microwave Background (CMB). As time progressed, gravitational collapse entered the non-linear regime, leading to the condensation of matter into dark matter halos, which serve as the birthplaces of galaxies.
 
-    My research explores this process of structure formation, focusing on how non-linear gravitational clustering shapes the distribution and evolution of cosmic structures. Using a combination of cosmological simulations and analytical models, I study how dark matter, the dominant mass component of the Universe, governs the growth of these structures and influences the observable Universe.`
+    My research explores this process of structure formation, focusing on how non-linear gravitational clustering shapes the distribution and evolution of cosmic structures. Using a combination of cosmological simulations and analytical models, I study how dark matter and baryonic matter governs the growth of these structures and influences the observable Universe.`
     } ,  
 
   halo: {
     title: "Galaxy/Halo",
-    body: `Dark matter halos — the gravitationally bound systems within which galaxies form and evolve. These halos grow through mergers and accretion, tracing the filamentary backbone of the cosmic web. Their abundance, internal structure, and evolution encode rich information about the underlying cosmology and the physics of structure formation.
+    body: `Dark matter halos -- the gravitationally bound systems within which galaxies form and evolve. These halos grow through mergers and accretion, tracing the filamentary backbone of the cosmic web. Their abundance, internal structure, and evolution encode rich information about the underlying cosmology and the physics of structure formation.
 
     We focused on understanding the statistical properties and evolution of halos in both scale-free and ΛCDM cosmologies. We demonstrated that deviations from the universality of the halo mass function arise from the slope of the input power spectrum. This work showed that ΛCDM models can be mapped to scale-free analogues, but only approximately. It provids   new insights into how initial conditions shape the population and evolution of halos, and why analytical models must be refined to capture these effects accurately.
 
-    We also explored the self-similarity of halo shapes and their dependence on cosmological parameters. Using dark matter simulations we found that halo shapes exhibit universal scaling behavior when normalized by a characteristic non-linear mass. 
+    We also explored the self-similarity of halo shapes and their dependence on cosmological parameters. Using dark matter simulations, we found that halo shapes exhibit universal scaling behavior when normalized by a characteristic non-linear mass. Building on this, we wish to investigate how halo shapes--and not only mass--affect galaxy properties. We aim to study how halo shape parameters evolve and what physical processes, such as mergers, environment, or the combination of both, govern their changing morphology.
 
-    In the future, I aim to extend these studies to hydrodynamical simulations, incorporating the effects of baryonic physics on halo morphology and evolution. I am particularly interested in linking halo-scale dynamics to galaxy-scale observables, exploring how baryons modify halo structure/properties.
+    With the new proposed runs, we will investigate how baryons influence both the large-scale dark matter distribution--examining effects on the correlation function, halo bias, and various cross-correlations--and the small-scale distribution, including changes to halo density profiles for halos hosting galaxies during cosmic dawn.
 
     Related material:
     <br />
@@ -100,8 +100,10 @@ export default function PersonalWebsite() {
       },
 
     thermo: {
-      title: "Cosmo-Thermo",
-      body: `Our recent and ongoing work explores this connection by studying the thermodynamic interpretation of late-time cosmology. We adopt a dynamical systems approach to examine whether cosmological models can attain thermodynamic stability. We find that while the Universe may pass through multiple phase transitions, it never truly reaches a stable equilibrium.
+      title: "Miscellaneous",
+      body: `1. Cosmo-Thermo
+      <br />
+      Our recent and ongoing work explores this connection by studying the thermodynamic interpretation of late-time cosmology. We adopt a dynamical systems approach to examine whether cosmological models can attain thermodynamic stability. We find that while the Universe may pass through multiple phase transitions, it never truly reaches a stable equilibrium.
   
       Related material:
       <br />
@@ -410,7 +412,7 @@ export default function PersonalWebsite() {
 <footer>
   <p>© {new Date().getFullYear()} Swati Gavas</p>
 <p className="last-updated">
-  Last updated: {new Date().toLocaleDateString("en-GB", { day: "2-digit", month: "long", year: "numeric" })}
+  Last updated: 18 Nov 2025
 </p>
 
 </footer>
