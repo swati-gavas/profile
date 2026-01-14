@@ -23,8 +23,10 @@ import h0 from './assets/h0.png';
 import sciart from './assets/sciart.JPG';
 import visible_matter from './assets/visible_matter.png';
 import web2 from './assets/web2.png';
+import tree from './assets/tree_12.png'; 
 const CV_FILE = process.env.PUBLIC_URL + '/CV_swati_gavas.pdf';
 const THESIS_FILE = process.env.PUBLIC_URL + '/Swati_Gavas_Thesis.pdf';
+const RedshiftedMemories_FILE = process.env.PUBLIC_URL + '/Redshifted_Memories_Swati_Gavas.pdf';  
 
 
 
@@ -49,9 +51,9 @@ export default function PersonalWebsite() {
     title: "Galaxy/Halo",
     body: `Dark matter halos -- the gravitationally bound systems within which galaxies form and evolve. These halos grow through mergers and accretion, tracing the filamentary backbone of the cosmic web. Their abundance, internal structure, and evolution encode rich information about the underlying cosmology and the physics of structure formation.
 
-    We focused on understanding the statistical properties and evolution of halos in both scale-free and ΛCDM cosmologies. We demonstrated that deviations from the universality of the halo mass function arise from the slope of the input power spectrum. This work showed that ΛCDM models can be mapped to scale-free analogues. It provids   new insights into how initial conditions shape the population and evolution of halos, and why analytical models must be refined to capture these effects accurately. Going further, we aim to use simulations to model the mechanism of gravitational collapse and use these results to improve theoretical halo mass function predictions.
+    We focused on understanding the statistical properties and evolution of halos in both scale-free and ΛCDM cosmologies. We demonstrated that deviations from the universality of the halo mass function arise from the slope of the input power spectrum. This work showed that ΛCDM models can be mapped to scale-free analogues. It provides new insights into how initial conditions shape the population and evolution of halos, and why analytical models must be refined to capture these effects accurately. Going further, we aim to use simulations to model the mechanism of gravitational collapse and use these results to improve theoretical halo mass function predictions.
 
-    We also explored the self-similarity of halo shapes and their dependence on cosmological parameters. Using dark matter simulations, we found that halo shapes exhibit universal scaling behavior when normalized by a characteristic non-linear mass. Building on this, we wish to investigate how halo shapes--and not only mass--affect galaxy properties. We aim to study how halo shape parameters evolve and what physical processes, such as mergers, environment, or the combination of both, govern their changing morphology.
+    We explored the self-similarity of halo shapes and their dependence on cosmological parameters, finding that they exhibit universal scaling behavior. Building on this, we aim to understand how evolving morphologies—driven by mergers and environment—affect galaxy properties. To capture the structural complexity of these halos beyond standard symmetric models, we employ spherical harmonic decomposition of the density field. This framework allows us to quantify deviations from ideal triaxiality (such as the l=1 dipole), serving as a powerful probe into a halo's dynamical state and the spatial distribution of its satellites.
 
     With the new proposed runs, we will investigate how baryons influence both the large-scale dark matter distribution--examining effects on the correlation function, halo bias, and various cross-correlations--and the small-scale distribution, including changes to halo density profiles for halos hosting galaxies during cosmic dawn.
 
@@ -222,6 +224,10 @@ export default function PersonalWebsite() {
               I try to share science beyond academia through short explainers, informal articles, and occasional outreach talks in simple language. It's a small attempt to make ideas in cosmology/physics/science a bit more approachable for people who are curious but not from the field.
             </p>
             <p>
+              <a href={RedshiftedMemories_FILE} target="_blank" rel="noopener noreferrer" className="cv-link">Redshifted Memories </a>: <em>When history is written in light, what happens when the light redshifts?</em><br></br>
+              My short story was selected as a Top 20 finalist nationwide in the <em>Spin Your Science</em> at the India Science Festival 2026. It blends cosmological concepts with narrative to explore how we view the history.
+            </p>
+            <p>
               <a href="https://www.youtube.com/watch?v=d9UKLpNnECo" target="_blank" rel="noopener noreferrer">My adventures with cosmic ghost | A 2-Minute Tour of My PhD</a>: A two minute video on my PhD research — explaining how dark matter shapes the Universe and how our cosmic location influences the measured expansion rate. Watch it on YouTube.
             </p>
             <p>
@@ -256,6 +262,10 @@ export default function PersonalWebsite() {
             <div className="gallery-grid">
               {galleryTab === "illustration" && (
                 <>
+                      <div className="gallery-item">
+                      <h4>Halo merger tree </h4>
+                <ClickToOpen src={tree} alt="Halo merger tree" />
+                    </div> 
                       <div className="gallery-item">
                       <h4>Cosmic web/ Dark Matter </h4>
                 <ClickToOpen src={cosmic_web} alt="Cosmic web" />
@@ -385,10 +395,6 @@ export default function PersonalWebsite() {
               <a href="https://www.youtube.com/@ugly-duckling-x" target="_blank" rel="noopener noreferrer" className="social-link">
                 YouTube
               </a>  
-              {", "}  
-              <a href="https://ictp.global/users/8140114" target="_blank" rel="noopener noreferrer" className="social-link">
-                ICTP Global
-              </a>
               {", "}
               <a href="https://www.goodreads.com/user/show/146852512-swati-gavas" target="_blank" rel="noopener noreferrer" className="social-link">
                 goodreads
@@ -412,7 +418,7 @@ export default function PersonalWebsite() {
 <footer>
   <p>© {new Date().getFullYear()} Swati Gavas</p>
 <p className="last-updated">
-  Last updated: 18 Nov 2025
+  Last updated: 14 Jan 2026
 </p>
 
 </footer>
