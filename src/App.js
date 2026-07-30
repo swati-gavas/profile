@@ -25,8 +25,7 @@ import visible_matter from './assets/visible_matter.png';
 import web2 from './assets/web2.png';
 import tree from './assets/tree_12.png'; 
 const CV_FILE = process.env.PUBLIC_URL + '/CV_swati_gavas.pdf';
-const THESIS_FILE = process.env.PUBLIC_URL + '/Swati_Gavas_Thesis.pdf';
-const RedshiftedMemories_FILE = process.env.PUBLIC_URL + '/Redshifted_Memories_Swati_Gavas.pdf';  
+const RedshiftedMemories_FILE = process.env.PUBLIC_URL + '/Redshifted_Memories_Swati_Gavas.pdf';
 
 
 
@@ -61,7 +60,9 @@ export default function PersonalWebsite() {
     <br />
     <a href="https://academic.oup.com/mnras/article/521/4/5960/7091923?login=true" target="_blank" rel="noopener noreferrer">[MNRAS article] Halo mass function in scale invariant models</a>
     <br />
-    <a href="https://ui.adsabs.harvard.edu/abs/2025asi..confO..68N/abstract" target="_blank" rel="noopener noreferrer">[ASI abstract] Self-Similarity of Halo Shapes in Cosmological Simulations</a>`
+    <a href="https://ui.adsabs.harvard.edu/abs/2025asi..confO..68N/abstract" target="_blank" rel="noopener noreferrer">[ASI abstract] Self-Similarity of Halo Shapes in Cosmological Simulations</a>
+    <br />
+    <a href="https://arxiv.org/abs/2603.26640" target="_blank" rel="noopener noreferrer">[preprint] Universality of Halo Shape and its Morphological Evolution across Cosmic Time</a>`
     },
 
 
@@ -109,7 +110,7 @@ export default function PersonalWebsite() {
   
       Related material:
       <br />
-      <a href="https://arxiv.org/abs/2509.04964" target="_blank" rel="noopener noreferrer">[preprint] A dynamical systems perspective on the thermodynamics of late-time cosmology
+      <a href="https://onlinelibrary.wiley.com/doi/10.1002/prop.70094" target="_blank" rel="noopener noreferrer">[Fortschr. Phys. article] A Dynamical Systems Perspective on the Thermodynamics of Late-Time Cosmology
       </a>`
       },
 };
@@ -118,7 +119,7 @@ export default function PersonalWebsite() {
     <div className="app">
       {/* Header */}
       <header>
-        <a href="/profile/" className="logo">
+        <a href="/" className="logo">
           <img src={logo} alt="Swati Gavas" className="logo-img" />
           <span>Swati Gavas</span>
         </a>
@@ -159,6 +160,9 @@ export default function PersonalWebsite() {
                 Since April 2025, I have been a postdoctoral researcher at the National Institute of Science Education and Research (NISER), Bhubaneswar, hosted by <a href="https://niser.irins.org/profile/241972" target="_blank" rel="noopener noreferrer"> Dr. Nishikanta Khandai</a>. My current work continues to explore gravitational clustering, halo formation, and late-time cosmology using both simulations and analytical approaches. 
               </p>
               <p>
+                Since July 2026, I have been pursuing my second postdoctoral position at Shanghai Jiao Tong University (SJTU), hosted by <a href="https://gax.sjtu.edu.cn/jxhan/node/4" target="_blank" rel="noopener noreferrer">Prof. Jiaxin Han</a>. Here, I am working on the depletion radius-based halo mass function. Since the depletion radius is dynamic in nature, this definition can improve the halo model framework.
+              </p>
+              <p>
                 Beyond research, I have contributed to teaching, mentored students in simulation-based projects, and actively participated in scientific events. I enjoy working on problems that bring together physics, computation, and interpretation.
               </p>
               <p>
@@ -168,9 +172,6 @@ export default function PersonalWebsite() {
               Download: {" "}
               <a href={CV_FILE} target="_blank" rel="noopener noreferrer" className="cv-link">
                 Curriculum Vitae
-              </a>{" --- "}
-              <a href={THESIS_FILE} target="_blank" rel="noopener noreferrer" className="cv-link">
-                Thesis
               </a>
 
               </p>
@@ -384,7 +385,7 @@ export default function PersonalWebsite() {
             <p>Reach out for collaborations, talks, discussions and feedback.</p>
             <p>
               Email:{" "}
-              <a href="mailto:youremail@example.com" className="email-link">
+              <a href="mailto:swatigavas47@gmail.com" className="email-link">
                 swatigavas47@gmail.com
               </a>{", "}
               Digital Presence: {" "}
@@ -405,10 +406,9 @@ export default function PersonalWebsite() {
             <a href={CV_FILE} target="_blank" rel="noopener noreferrer" className="cv-link">
               Curriculum Vitae
             </a>{" --- "}
-            <a href={THESIS_FILE} target="_blank" rel="noopener noreferrer" className="cv-link">
+            <a href="https://arxiv.org/abs/2604.21634" target="_blank" rel="noopener noreferrer" className="cv-link">
               Thesis
             </a>
-
 
             </p>
           </Section>
@@ -418,7 +418,7 @@ export default function PersonalWebsite() {
 <footer>
   <p>© {new Date().getFullYear()} Swati Gavas</p>
 <p className="last-updated">
-  Last updated: 14 Jan 2026
+  Last updated: 29 Jul 2026
 </p>
 
 </footer>

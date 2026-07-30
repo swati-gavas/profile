@@ -74,7 +74,6 @@ header a:hover {
 /* ========== SECTIONS ========== */
 section {
   margin-top: 3rem;
-  /* padding-bottom: 3rem; */
 }
 
 section h2 {
@@ -88,10 +87,9 @@ section p {
   font-size: 1.05rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
-  /* text-indent: 2em */
 } 
 
-/* ========== About SECTION ========== */
+/* ========== ABOUT SECTION ========== */
 .intro-sub {
   color: #aaa6a6;           
   font-size: 1.1rem;
@@ -109,10 +107,8 @@ section p {
 
 .intro-desc {
   color: #aaa6a6;        
-  font-size: 1rem;
   line-height: 1.4;
   font-size: 1.5rem;
-  /* margin-bottom: 3rem; */
 }
 
 /* ========== RESEARCH SECTION ========== */
@@ -140,7 +136,7 @@ section p {
 
 .research-nav a.active {
   color: #fff;
-  border-bottom-color: #6b6b6b; /* same blue highlight as header tabs */
+  border-bottom-color: #6b6b6b;
   font-weight: 500;
 }
 
@@ -157,7 +153,6 @@ section p {
   margin-bottom: 1.5rem;
 }
 
-/* optional: responsive wrap for small screens */
 @media (max-width: 600px) {
   .research-nav {
     flex-wrap: wrap;
@@ -169,9 +164,9 @@ section p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;              /* allows wrapping on small screens */
+  flex-wrap: wrap;
   margin-bottom: 1rem;
-  border-bottom: 1px solid #222; /* optional subtle divider */
+  border-bottom: 1px solid #222;
   padding-bottom: 0.5rem;
 }
 
@@ -181,10 +176,9 @@ section p {
   margin: 0;
 }
 
-/* links inline with heading */
 .research-links {
   display: flex;
-  gap: 1.2rem;                  /* space between links */
+  gap: 1.2rem;
   font-size: 0.9rem;
 }
 
@@ -200,7 +194,6 @@ section p {
   border-color: #ffffff;
 }
 
-/* responsive adjustment */
 @media (max-width: 600px) {
   .section-heading {
     flex-direction: column;
@@ -213,35 +206,7 @@ section p {
   }
 }
 
-
 /* ========== GALLERY ========== */
-/* FINAL, OVERRIDING RULE — PUT AT END OF FILE */
-.gallery-item img {
-  display: block;
-  width: 100% !important;   /* <-- makes image exactly as wide as its box */
-  height: auto !important;  /* no stretching */
-  aspect-ratio: 4 / 3;      /* keep portrait box shape */
-  object-fit: cover;
-  border-radius: 6px;
-  border: 1px solid #222;
-}
-
-
-.gallery-item:nth-child(even) {
-  background: #0e0e0e;
-}
-
-.gallery-item h3 {
-  color: #fff;
-  font-size: 1.1rem;
-}
-
-.gallery-item p {
-  font-size: 0.9rem;
-  color: #ccc;
-}
-
-/* ========== GALLERY NAVIGATION (like research tabs) ========== */
 .gallery-nav {
   display: flex;
   gap: 1.5rem;
@@ -255,9 +220,9 @@ section p {
 .gallery-nav a {
   color: #ccc;
   text-decoration: none;
-  transition: color 0.3s ease, border-color 0.3s ease;
   padding-bottom: 0.3rem;
   border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .gallery-nav a:hover {
@@ -270,84 +235,13 @@ section p {
   font-weight: 500;
 }
 
-.gallery-content p {
-  color: #c9c9c9;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-/* ========== GALLERY GRID LAYOUT ========== */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-top: 1rem;
 }
 
-.gallery-item {
-  background: #111;
-  border-radius: 10px;
-  padding: 1rem;
-  text-align: center;
-  transition: transform 0.2s ease;
-}
-
-.gallery-item:hover {
-  transform: translateY(-3px);
-}
-
-.gallery-item h4 {
-  color: #dfdada;
-  margin-bottom: 0.8rem;
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  object-fit: cover;
-  border: 1px solid #222;
-}
-
-/* gallery nav (tabs) — you likely have this already; keep it consistent */
-.gallery-nav {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  font-size: 1.15rem;
-}
-
-.gallery-nav a {
-  color: #ccc;
-  text-decoration: none;
-  padding-bottom: 0.3rem;
-  border-bottom: 2px solid transparent;
-  transition: color 0.3s ease, border-color 0.3s ease;
-}
-
-.gallery-nav a:hover { color: #fff; }
-
-.gallery-nav a.active {
-  color: #fff;
-  border-bottom-color: #6b6b6b;
-  font-weight: 500;
-}
-
-/* two-per-row responsive grid with short title above each image */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* two columns on desktop */
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-/* stack to single column on small screens */
 @media (max-width: 700px) {
   .gallery-grid {
     grid-template-columns: 1fr;
@@ -368,6 +262,10 @@ section p {
   box-shadow: 0 6px 18px rgba(0,0,0,0.6);
 }
 
+.gallery-item:nth-child(even) {
+  background: #0e0e0e;
+}
+
 .gallery-item h4 {
   color: #dfdada;
   margin: 0 0 0.8rem 0;
@@ -376,15 +274,13 @@ section p {
 }
 
 .gallery-item img {
+  display: block;
   width: 100%;
-  height: 200px;        /* fixed height keeps grid consistent */
+  height: 200px;
   object-fit: cover;
   border-radius: 6px;
-  display: block;
   border: 1px solid #222;
 }
-
-
 
 /* ========== FOOTER ========== */
 footer {
@@ -412,7 +308,7 @@ footer {
   }
 }
 
-/* ========== hyperlink STYLING ========== */
+/* ========== HYPERLINK STYLING ========== */
 a {
   position: relative;
   color: #d6d5fd;
