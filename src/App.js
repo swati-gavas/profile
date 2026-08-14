@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
+import translations from "./i18n";
 import logo from './assets/logo.JPG'; 
 import meTalking from './assets/me_talking.jpg';
 import homeImg from './assets/home.JPG';
@@ -27,108 +28,56 @@ import tree from './assets/tree_12.png';
 const CV_FILE = process.env.PUBLIC_URL + '/CV_swati_gavas.pdf';
 const RedshiftedMemories_FILE = process.env.PUBLIC_URL + '/Redshifted_Memories_Swati_Gavas.pdf';
 
-
+const galleryImageKeys = {
+  illustration: { tree, cosmic_web, sciart, visible_matter, h0, web2, fractal },
+  photography: { pmkway, ptrailing, ptelescope, pduck, pcamouflage, pbird },
+  caricatures: { cjvn, c2024, c12024, c2020, c2017, c22009, c12009 },
+  misc: { meTalking, homeImg },
+};
 
 export default function PersonalWebsite() {
   const [activeSection, setActiveSection] = useState("about");
   const [researchTab, setResearchTab] = useState("intro");
   const [galleryTab, setGalleryTab] = useState("illustration");
-
-  const researchTabs = {
-  intro: {
-    title: "Introduction",
-    body: `According to Einstein's General Theory of Relativity, gravity arises from the curvature of spacetime caused by the presence of matter and energy. This curvature drives the mutual attraction of matter, leading to the formation of cosmic structures — galaxies, clusters, filaments, and vast voids — collectively known as the Large-Scale Structure (LSS) of the Universe.
-
-    The mapping of these structures has evolved over nearly a century, from Hubble's early galaxy counts to modern redshift surveys such as 2dFGRS, SDSS, DESI, and Euclid, which have revealed a striking cosmic web pattern. This intricate network of filaments and voids reflects how gravity amplifies tiny primordial fluctuations in the matter density field left behind by the inflationary epoch of the early Universe.
-
-    The theoretical understanding of LSS begins with small quantum fluctuations seeded during inflation, which grew under gravity as the Universe expanded and cooled. In the early linear regime, these perturbations are well described by linear perturbation theory and transfer functions, consistent with observations of the Cosmic Microwave Background (CMB). As time progressed, gravitational collapse entered the non-linear regime, leading to the condensation of matter into dark matter halos, which serve as the birthplaces of galaxies.
-
-    My research explores this process of structure formation, focusing on how non-linear gravitational clustering shapes the distribution and evolution of cosmic structures. Using a combination of cosmological simulations and analytical models, I study how dark matter and baryonic matter governs the growth of these structures and influences the observable Universe.`
-    } ,  
-
-  halo: {
-    title: "Galaxy/Halo",
-    body: `Dark matter halos -- the gravitationally bound systems within which galaxies form and evolve. These halos grow through mergers and accretion, tracing the filamentary backbone of the cosmic web. Their abundance, internal structure, and evolution encode rich information about the underlying cosmology and the physics of structure formation.
-
-    We focused on understanding the statistical properties and evolution of halos in both scale-free and ΛCDM cosmologies. We demonstrated that deviations from the universality of the halo mass function arise from the slope of the input power spectrum. This work showed that ΛCDM models can be mapped to scale-free analogues. It provides new insights into how initial conditions shape the population and evolution of halos, and why analytical models must be refined to capture these effects accurately. Going further, we aim to use simulations to model the mechanism of gravitational collapse and use these results to improve theoretical halo mass function predictions.
-
-    We explored the self-similarity of halo shapes and their dependence on cosmological parameters, finding that they exhibit universal scaling behavior. Building on this, we aim to understand how evolving morphologies—driven by mergers and environment—affect galaxy properties. To capture the structural complexity of these halos beyond standard symmetric models, we employ spherical harmonic decomposition of the density field. This framework allows us to quantify deviations from ideal triaxiality (such as the l=1 dipole), serving as a powerful probe into a halo's dynamical state and the spatial distribution of its satellites.
-
-    With the new proposed runs, we will investigate how baryons influence both the large-scale dark matter distribution--examining effects on the correlation function, halo bias, and various cross-correlations--and the small-scale distribution, including changes to halo density profiles for halos hosting galaxies during cosmic dawn.
-
-    Related material:
-    <br />
-    <a href="https://academic.oup.com/mnras/article/521/4/5960/7091923?login=true" target="_blank" rel="noopener noreferrer">[MNRAS article] Halo mass function in scale invariant models</a>
-    <br />
-    <a href="https://ui.adsabs.harvard.edu/abs/2025asi..confO..68N/abstract" target="_blank" rel="noopener noreferrer">[ASI abstract] Self-Similarity of Halo Shapes in Cosmological Simulations</a>
-    <br />
-    <a href="https://arxiv.org/abs/2603.26640" target="_blank" rel="noopener noreferrer">[preprint] Universality of Halo Shape and its Morphological Evolution across Cosmic Time</a>`
-    },
-
-
-    hubble: {
-      title: "Cosmological Tensions",
-      body: `Modern cosmology rests on the success of the ΛCDM model, yet precision observations have revealed several persistent discrepancies — the so-called cosmological tensions — Hubble tension, S8 tension, and the presence of ultra-large-scale patterns. 
-
-      The most significant among these is the Hubble tension, where estimates of the Universe's expansion rate differ by 4-5 standard deviations depending on the measurement method. Understanding whether these tensions arise from new physics or from the complexity of cosmic structure or observational systematics remains a challenge.
-
-      We investigate how gravitational clustering and cosmic environment contribute to these observed discrepancies. Using large-volume cosmological N-body simulations, we have examined how peculiar velocities and local density fluctuations bias measurements of the Hubble-Lemaître constant. Our results show that Milky Way-like environments can induce variations of up to 5% in locally inferred expansion rates, accommodating part of the Hubble tension. 
-
-      Scale of homogeneity debate — the question of whether the Universe truly becomes uniform beyond a certain scale. Using fractal dimension analysis on cosmological simulations, we test whether the recently reported ultra-large structures, such as the Giant Arc and Big Ring, are consistent with ΛCDM predictions or suggest a breakdown of statistical homogeneity. 
-
-      We have run large-volume simulations to measure bulk flow statistics and their correlation with local density environments. These results will inform how coherent flows bias cosmological measurements and whether our observed location is representative of ΛCDM expectations.
-
-      Looking forward, I intend to combine these analyses with data from upcoming surveys such as DESI, LSST, and Euclid to build a framework that disentangles the effects of environment, cosmic variance, and survey geometry from intrinsic parameters.
-
-      Related material:
-      <br />
-      <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.111.043516" target="_blank" rel="noopener noreferrer">[PRD article] Dispersion in the Hubble-Lemaître constant measurements from gravitational clustering</a>
-      <br />
-      <a href="https://youtu.be/JJmDFDxWJhg" target="_blank" rel="noopener noreferrer">[ICTP talk] Dispersion in the Hubble-Lemaître constant measurements from gravitational clustering</a>
-      <br />
-      <a href="https://ui.adsabs.harvard.edu/abs/2024asi..confO..15G/abstract" target="_blank" rel="noopener noreferrer">[ASI abstract] Dispersion in the Hubble-Lemaître constant measurements from gravitational clustering</a>`
-      },
-
-    numerical: {
-      title: "Numerical Artefacts",
-      body: `Cosmological simulations are essential tools for understanding how the Universe evolves from primordial density fluctuations to the complex large-scale structures we observe today. However, these simulations are limited by computational constraints, which can introduce numerical artefacts that distort physical interpretations. Issues such as finite box size, discrete particle sampling, force resolution, and transient modes can all impact how accurately simulations capture non-linear gravitational clustering and halo formation. Systematically disentangling numerical artefacts from genuine physical signals is crucial for the next generation of precision cosmological simulations, capable of matching the accuracy demanded by surveys like Euclid, LSST, and DESI.
-
-      We investigated the origin of transient features that arise from the mismatch between initial condition generation and subsequent dynamical evolution. We showed how missing small-scale power can affect mode coupling, halo collapse, and the growth of structures. Our analysis provided a set of guidelines for initializing and evolving cosmological simulations, improving their robustness for studying non-linear dynamics and halo statistics.
-
-      Using a new suite of simulations, we are examining how finite box size influences derived quantities such as halo shapes, density profiles, and mass functions. Our results show that this effect is systematic and significant for simulation boxes smaller than approximately 50 Mpc, highlighting the importance of volume effects in accurately characterizing halo properties.
-
-      Related material:
-      <br />
-      <a href="https://link.springer.com/article/10.1007/s12036-025-10055-x" target="_blank" rel="noopener noreferrer">[JOAA article] On the origin of transient features in cosmological N-Body simulations</a>`
-      },
-
-    thermo: {
-      title: "Miscellaneous",
-      body: `1. Cosmo-Thermo
-      <br />
-      Our recent and ongoing work explores this connection by studying the thermodynamic interpretation of late-time cosmology. We adopt a dynamical systems approach to examine whether cosmological models can attain thermodynamic stability. We find that while the Universe may pass through multiple phase transitions, it never truly reaches a stable equilibrium.
-  
-      Related material:
-      <br />
-      <a href="https://onlinelibrary.wiley.com/doi/10.1002/prop.70094" target="_blank" rel="noopener noreferrer">[Fortschr. Phys. article] A Dynamical Systems Perspective on the Thermodynamics of Late-Time Cosmology
-      </a>`
-      },
-};
+  const [lang, setLang] = useState("en");
+  const t = translations[lang];
+  const researchTabs = t.research.tabs;
 
   return (
     <div className="app">
       {/* Header */}
       <header>
-        <a href="/" className="logo">
-          <img src={logo} alt="Swati Gavas" className="logo-img" />
-          <span>Swati Gavas</span>
-        </a>
+        <div className="header-top">
+          <a href="/" className="logo">
+            <img src={logo} alt="Swati Gavas" className="logo-img" />
+            <span>{t.hero.name}</span>
+          </a>
+          <div className="lang-switch" role="group" aria-label="Language">
+            <button
+              type="button"
+              className={lang === "en" ? "active" : ""}
+              onClick={() => setLang("en")}
+              aria-pressed={lang === "en"}
+            >
+              English
+            </button>
+            <span className="lang-divider">/</span>
+            <button
+              type="button"
+              className={lang === "mr" ? "active" : ""}
+              onClick={() => setLang("mr")}
+              aria-pressed={lang === "mr"}
+            >
+              मराठी
+            </button>
+          </div>
+        </div>
         <nav className="nav-links">
-          <NavLink section="about" setActiveSection={setActiveSection}>About</NavLink>
-          <NavLink section="research" setActiveSection={setActiveSection}>Research</NavLink>
-          <NavLink section="scipop" setActiveSection={setActiveSection}>SciPop</NavLink>
-          <NavLink section="gallery" setActiveSection={setActiveSection}>Gallery</NavLink>
-          <NavLink section="contact" setActiveSection={setActiveSection}>Contact</NavLink>
+          <NavLink section="about" setActiveSection={setActiveSection}>{t.nav.about}</NavLink>
+          <NavLink section="research" setActiveSection={setActiveSection}>{t.nav.research}</NavLink>
+          <NavLink section="scipop" setActiveSection={setActiveSection}>{t.nav.scipop}</NavLink>
+          <NavLink section="gallery" setActiveSection={setActiveSection}>{t.nav.gallery}</NavLink>
+          <NavLink section="contact" setActiveSection={setActiveSection}>{t.nav.contact}</NavLink>
         </nav>
       </header>
 
@@ -141,40 +90,54 @@ export default function PersonalWebsite() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <p className="intro-sub">Hello — I am</p>
-              <h1 className="intro-name">Swati Gavas</h1>
+              <p className="intro-sub">{t.hero.hello}</p>
+              <h1 className="intro-name">{t.hero.name}</h1>
               <p className="intro-desc">
-                A cosmology researcher exploring gravitational clustering, galaxy/halo physics,
-                and structure formation in the Universe. Combining simulations, analytical models, and observations.
+                {t.hero.desc}
               </p>
             </motion.div>
 
-            <Section id="about" title="About Me">
-              <p>
-                I am from a small tribal village called Isapur in the Western Ghats. Owing to my father's job transfers, I spent my childhood in different towns and villages across western Maharashtra, including Koyana, Kokrud, and Chiplun. I completed my education in Maharashtra up to the postgraduate level, earning a Bachelor's degree in Physics from Mumbai University, followed by a Master's degree in Physics with a specialization in Astronomy and Astrophysics at Savitribai Phule Pune University and Inter-University Centre for Astronomy and Astrophysics (IUCAA), Pune.
-              </p>
-              <p>
-               In 2018, I joined the Indian Institute of Science Education and Research (IISER) Mohali for my doctoral studies in cosmology. My PhD, completed in December 2024 under the supervision of <a href="https://web.iisermohali.ac.in/Faculty/jasjeet/index.html" target="_blank" rel="noopener noreferrer">Prof. Jasjeet Singh Bagla</a>, was titled “Aspects of gravitational clustering and structure formation in the Universe.” My thesis focused on non-linear structure formation using cosmological N-body simulations, with contributions to understanding the halo mass function in scale-invariant models, the dispersion in Hubble—Lemaître constant measurements due to gravitational clustering, and the origin of transient numerical artifacts in simulations.
-              </p>
-              <p>
-                Since April 2025, I have been a postdoctoral researcher at the National Institute of Science Education and Research (NISER), Bhubaneswar, hosted by <a href="https://niser.irins.org/profile/241972" target="_blank" rel="noopener noreferrer"> Dr. Nishikanta Khandai</a>. My current work continues to explore gravitational clustering, halo formation, and late-time cosmology using both simulations and analytical approaches. 
-              </p>
-              <p>
-                Since July 2026, I have been pursuing my second postdoctoral position at Shanghai Jiao Tong University (SJTU), hosted by <a href="https://gax.sjtu.edu.cn/jxhan/node/4" target="_blank" rel="noopener noreferrer">Prof. Jiaxin Han</a>. Here, I am working on the depletion radius-based halo mass function. Since the depletion radius is dynamic in nature, this definition can improve the halo model framework.
-              </p>
-              <p>
-                Beyond research, I have contributed to teaching, mentored students in simulation-based projects, and actively participated in scientific events. I enjoy working on problems that bring together physics, computation, and interpretation.
-              </p>
-              <p>
-                Outside academic life, I enjoy reading, travelling, caricaturing, and science popularization.
-              </p>  
-             <p>
-              Download: {" "}
-              <a href={CV_FILE} target="_blank" rel="noopener noreferrer" className="cv-link">
-                Curriculum Vitae
-              </a>
+            <Section id="about" title={t.about.title}>
+              <div className="about-layout">
+                <div className="about-prose">
+                  <p>
+                    {t.about.p1}
+                  </p>
+                  <p>
+                    {t.about.p2Pre}<a href="https://web.iisermohali.ac.in/Faculty/jasjeet/index.html" target="_blank" rel="noopener noreferrer">{t.about.p2Advisor}</a>{t.about.p2Post}
+                  </p>
+                  <p>
+                    {t.about.p3Pre}<a href="https://niser.irins.org/profile/241972" target="_blank" rel="noopener noreferrer">{t.about.p3Host1}</a>{t.about.p3Mid}<a href="https://gax.sjtu.edu.cn/jxhan/node/4" target="_blank" rel="noopener noreferrer">{t.about.p3Host2}</a>{t.about.p3Post}
+                  </p>
+                  <p>
+                    {t.about.p4}
+                  </p>
+                  <p>
+                    {t.about.p5}
+                  </p>
+                 <p>
+                  {t.about.download} {" "}
+                  <a href={CV_FILE} target="_blank" rel="noopener noreferrer" className="cv-link">
+                    {t.about.cv}
+                  </a>
 
-              </p>
+                  </p>
+                </div>
+
+                <aside className="about-timeline" aria-label="Career timeline">
+                  <h3 className="timeline-heading">{t.about.timelineHeading}</h3>
+                  <ol className="timeline-list">
+                    {t.timeline.map((item, idx) => (
+                      <li className="timeline-item" key={idx}>
+                        <span className="timeline-dot" />
+                        <span className="timeline-date">{item.date}</span>
+                        <span className="timeline-role">{item.role}</span>
+                        <span className="timeline-org">{item.org}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </aside>
+              </div>
             </Section>
           </>
         )}
@@ -182,12 +145,12 @@ export default function PersonalWebsite() {
         {activeSection === "research" && (
         <Section id="research">
           <div className="section-heading">
-            <h2>Research</h2>
+            <h2>{t.research.heading}</h2>
             <div className="research-links">
-              <a href="https://scholar.google.com/citations?user=jes8qZUAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-              <a href="https://orcid.org/my-orcid?orcid=0000-0002-0775-3334" target="_blank" rel="noopener noreferrer">ORCID</a>
-              <a href="https://inspirehep.net/authors/2808503" target="_blank" rel="noopener noreferrer">INSPIRE-HEP</a>
-              <a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22Swati%20Gavas%22" target="_blank" rel="noopener noreferrer">NASA ADS</a>
+              <a href="https://scholar.google.com/citations?user=jes8qZUAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">{t.research.links.scholar}</a>
+              <a href="https://orcid.org/my-orcid?orcid=0000-0002-0775-3334" target="_blank" rel="noopener noreferrer">{t.research.links.orcid}</a>
+              <a href="https://inspirehep.net/authors/2808503" target="_blank" rel="noopener noreferrer">{t.research.links.inspire}</a>
+              <a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22Swati%20Gavas%22" target="_blank" rel="noopener noreferrer">{t.research.links.ads}</a>
             </div>
           </div>
 
@@ -219,20 +182,20 @@ export default function PersonalWebsite() {
         {activeSection === "scipop" && (
         <Section id="scipop">
           <div className="section-heading">
-            <h2>Science Popularisation</h2>
+            <h2>{t.scipop.heading}</h2>
           </div>
             <p>
-              I try to share science beyond academia through short explainers, informal articles, and occasional outreach talks in simple language. It's a small attempt to make ideas in cosmology/physics/science a bit more approachable for people who are curious but not from the field.
+              {t.scipop.p1}
             </p>
             <p>
-              <a href={RedshiftedMemories_FILE} target="_blank" rel="noopener noreferrer" className="cv-link">Redshifted Memories </a>: <em>When history is written in light, what happens when the light redshifts?</em><br></br>
-              My short story was selected as a Top 20 finalist nationwide in the <em>Spin Your Science</em> at the India Science Festival 2026. It blends cosmological concepts with narrative to explore how we view the history.
+              <a href={RedshiftedMemories_FILE} target="_blank" rel="noopener noreferrer" className="cv-link">{t.scipop.story} </a>: <em>{t.scipop.storyTagline}</em><br></br>
+              {t.scipop.storyBody}
             </p>
             <p>
-              <a href="https://www.youtube.com/watch?v=d9UKLpNnECo" target="_blank" rel="noopener noreferrer">My adventures with cosmic ghost | A 2-Minute Tour of My PhD</a>: A two minute video on my PhD research — explaining how dark matter shapes the Universe and how our cosmic location influences the measured expansion rate. Watch it on YouTube.
+              <a href="https://www.youtube.com/watch?v=d9UKLpNnECo" target="_blank" rel="noopener noreferrer">{t.scipop.video1Title}</a>: {t.scipop.video1Body}
             </p>
             <p>
-              <a href="https://www.youtube.com/watch?v=5RHTLGk3zfs" target="_blank" rel="noopener noreferrer">Structure Formation in the Universe</a>: A one-hour talk for undergraduate students. It introduces how galaxies, clusters, and the cosmic web form from tiny fluctuations in the early Universe, explaining the role of gravity and cosmological simulations in shaping the large-scale structure we observe today.
+              <a href="https://www.youtube.com/watch?v=5RHTLGk3zfs" target="_blank" rel="noopener noreferrer">{t.scipop.video2Title}</a>: {t.scipop.video2Body}
             </p>
           </Section>
         )}
@@ -240,7 +203,7 @@ export default function PersonalWebsite() {
         {activeSection === "gallery" && (
           <Section id="gallery">
             <div className="section-heading">
-              <h2>Image Gallery</h2>
+              <h2>{t.gallery.heading}</h2>
             </div>
 
             {/* Gallery Tabs */}
@@ -251,129 +214,19 @@ export default function PersonalWebsite() {
                 href="#"
                 onClick={(e) => { e.preventDefault(); setGalleryTab(tab); }}
                 className={galleryTab === tab ? "active" : ""}>
-                {tab === "illustration" && "Science Illustration"}
-                {tab === "photography" && "Photography"}
-                {tab === "caricatures" && "Caricatures+"}
-                {tab === "misc" && "Miscellaneous"}
+                {t.gallery.tabs[tab]}
               </a>
               ))}
             </div>
 
             {/* Gallery Grid */}
             <div className="gallery-grid">
-              {galleryTab === "illustration" && (
-                <>
-                      <div className="gallery-item">
-                      <h4>Halo merger tree </h4>
-                <ClickToOpen src={tree} alt="Halo merger tree" />
-                    </div> 
-                      <div className="gallery-item">
-                      <h4>Cosmic web/ Dark Matter </h4>
-                <ClickToOpen src={cosmic_web} alt="Cosmic web" />
-                    </div> 
-                        <div className="gallery-item">
-                      <h4>Award winning SciArt</h4>
-                <ClickToOpen src={sciart} alt="sciart" />
-                    </div> 
-                  <div className="gallery-item">
-                      <h4>Visible Matter</h4>
-                <ClickToOpen src={visible_matter} alt="Visible Matter" />
-                    </div> 
-                        <div className="gallery-item">
-                      <h4>Hubble constant bias with local density</h4>
-                <ClickToOpen src={h0} alt="Hubble" />
-                    </div>
-                      <div className="gallery-item">
-                      <h4>Dark matter at different scales</h4>
-                <ClickToOpen src={web2} alt="web2" />
-                    </div>
-                    <div className="gallery-item">
-                      <h4>Fractal structure: Python. Turtle</h4>
-                <ClickToOpen src={fractal} alt="fractal" />
-                    </div>
-                </>
-              )}
-
-              {galleryTab === "photography" && (
-                <>
-                      <div className="gallery-item">
-                      <h4>Milky Way cloud and Orion, location: Isapur, MH</h4>
-                <ClickToOpen src={pmkway} alt="Milky way cloud and Orion" />
-                    </div> 
-                        <div className="gallery-item">
-                      <h4>Star trail, location: Kasol, HP</h4>
-                <ClickToOpen src={ptrailing} alt="Star trail" />
-                    </div> 
-                  <div className="gallery-item">
-                      <h4>Telescope setup</h4>
-                <ClickToOpen src={ptelescope} alt="Telescope" />
-                    </div> 
-                        <div className="gallery-item">
-                      <h4>Duck, location: Sibsagar, AS</h4>
-                <ClickToOpen src={pduck} alt="Duck" />
-                    </div>
-                      <div className="gallery-item">
-                      <h4>Camouflage, location: SPPU</h4>
-                <ClickToOpen src={pcamouflage} alt="Camouflage" />
-                    </div>
-                    <div className="gallery-item">
-                      <h4>Birds, location: Sukhana Lake, PB</h4>
-                <ClickToOpen src={pbird} alt="Birds" />
-                    </div>
-                                </>
-              )}
-
-                {galleryTab === "caricatures" && (
-                  <>
-                          <div className="gallery-item">
-                      <h4>Jayant Vishnu Narlikar</h4>
-                <ClickToOpen src={cjvn} alt="Jayant Vishnu Narlikar" />
-                    </div> 
-                        <div className="gallery-item">
-                      <h4>From back of the nib</h4>
-                <ClickToOpen src={c2024} alt="From back of the nib" />
-                    </div> 
-                  <div className="gallery-item">
-                      <h4>Undefined</h4>
-                <ClickToOpen src={c12024} alt="undefined" />
-                    </div> 
-                        <div className="gallery-item">
-                      <h4>COVID boredom</h4>
-                <ClickToOpen src={c2020} alt="COVID boredom" />
-                    </div>
-                      <div className="gallery-item">
-                      <h4>2017 collection ! some of them are not public figures !</h4>
-                <ClickToOpen src={c2017} alt="2017 collection" />
-                    </div>
-                    <div className="gallery-item">
-                      <h4>2009 collection: Part II</h4>
-                <ClickToOpen src={c22009} alt="2009 collection: Part II" />
-                    </div>
-                        <div className="gallery-item">
-                      <h4>2009 collection: Part I</h4>
-                <ClickToOpen src={c12009} alt="2009 collection: Part I" />
-                    </div>
-                  </>
-                )}
-
-
-                {galleryTab === "misc" && (
-                  <>
-                    <div className="gallery-item">
-                      <h4>Me talking in conferences: ICTP and ASI</h4>
-                <ClickToOpen src={meTalking} alt="Me talking..." />
-                    </div>
-
-                    <div className="gallery-item">
-                      <h4>Home/Isapur/Western Ghats</h4>
-                <ClickToOpen src={homeImg} alt="Home" />
-                    </div>
-                  </>
-                )}
-
-
-
-
+              {Object.entries(galleryImageKeys[galleryTab]).map(([key, src]) => (
+                <div className="gallery-item" key={key}>
+                  <h4>{t.gallery[galleryTab][key]}</h4>
+                  <ClickToOpen src={src} alt={t.gallery[galleryTab][key]} />
+                </div>
+              ))}
             </div>
           </Section>
         )}
@@ -381,33 +234,33 @@ export default function PersonalWebsite() {
 
 
         {activeSection === "contact" && (
-          <Section id="contact" title="Contact">
-            <p>Reach out for collaborations, talks, discussions and feedback.</p>
+          <Section id="contact" title={t.contact.title}>
+            <p>{t.contact.intro}</p>
             <p>
-              Email:{" "}
+              {t.contact.email}{" "}
               <a href="mailto:swatigavas47@gmail.com" className="email-link">
                 swatigavas47@gmail.com
               </a>{", "}
-              Digital Presence: {" "}
+              {t.contact.digital} {" "}
               <a href="https://www.linkedin.com/in/swatigavas/" target="_blank" rel="noopener noreferrer" className="social-link">
-                LinkedIn
+                {t.contact.linkedin}
               </a>
               {", "}
               <a href="https://www.youtube.com/@ugly-duckling-x" target="_blank" rel="noopener noreferrer" className="social-link">
-                YouTube
-              </a>  
+                {t.contact.youtube}
+              </a>
               {", "}
               <a href="https://www.goodreads.com/user/show/146852512-swati-gavas" target="_blank" rel="noopener noreferrer" className="social-link">
-                goodreads
+                {t.contact.goodreads}
               </a>
           </p>
             <p>
-            Download: {" "}
+            {t.contact.download} {" "}
             <a href={CV_FILE} target="_blank" rel="noopener noreferrer" className="cv-link">
-              Curriculum Vitae
+              {t.contact.cv}
             </a>{" --- "}
             <a href="https://arxiv.org/abs/2604.21634" target="_blank" rel="noopener noreferrer" className="cv-link">
-              Thesis
+              {t.contact.thesis}
             </a>
 
             </p>
@@ -418,7 +271,7 @@ export default function PersonalWebsite() {
 <footer>
   <p>© {new Date().getFullYear()} Swati Gavas</p>
 <p className="last-updated">
-  Last updated: 29 Jul 2026
+  {t.footer.lastUpdated}
 </p>
 
 </footer>
